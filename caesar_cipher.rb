@@ -21,5 +21,5 @@ end
 puts arr.join()
 end
 
-cipher("What a string!", 5)
+cipher("What a string!", 6)
  
