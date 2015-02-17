@@ -80,12 +80,4 @@ module Enumerable
     c
    end
 
-
-
-
-
-
-
-
-
 end
