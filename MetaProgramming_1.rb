@@ -27,3 +27,11 @@ puts "#{obj.a}"
 #puts obj.instance_variable_get("@a")
 puts "#{A.class_variable_get("@@a")}"
 puts "#{obj.l.call}"
+=begin Output:
+1
+2
+3
+11
+22
+33
+=end
