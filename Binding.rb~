@@ -1,0 +1,77 @@
+=begin #1
+bind = class A
+  @@a = 1
+  @a = 2
+  a = 3
+
+  binding
+end
+
+p eval('[@@a, @a, a]', bind)   # Replace '*****' to your code
+ 
+ #3
+a = "sas"
+l =lambda { a }
+ 
+ 
+   puts l.call 
+ 
+
+#2
+puts _File_
+puts _Line_
+
+ def goo
+    a = 1337
+     binding
+  end
+
+   def foo( binding_context )
+     binding_context # eval will only refer to binding the one that's in binding_context
+  end
+
+ 
+  puts eval("a", goo)  # 1337
+=end
+ eval("puts 'hello world'")
+  # becomes
+  eval("puts 'hello world'", binding, __FILE__, __LINE__)
+
+  "str".instance_eval("puts self")
+  # becomes
+  "str".instance_eval("puts self", __FILE__, __LINE__)
+
+  String.class_eval("puts self")
+  # becomes
+  String.class_eval("B=1", __FILE__, __LINE__)
+
+  A = Class.new
+
+  A.class_eval do 
+    def inst_method_A
+      puts "instance_method"
+      puts "#{self}"
+    end
+    
+  end
+  A.instance_eval do
+    def class_method_A
+      puts "class_emthod"
+      puts "#{self}"
+    end
+  end
+
+A.class_method_A
+a =A.new
+b = A.new
+ 
+a.inst_method_A
+b.inst_method_A
+a.instance_eval do
+  def singleton_a
+    puts "#{self}"
+    puts "singleton_a"
+  end
+end
+a.singleton_a
+

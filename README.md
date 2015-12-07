@@ -1,2 +1,2 @@
-# my_ruby_projects
-Ruby_Projects
+# my_ruby_project
+practise of Ruby concepts 
